@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <form class="form p-t-20" 
+                        [formGroup]="userForm"
+                        (ngSubmit)="addUser()">
+
+                <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="exampleInputuname">Nombre</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                            <input type="text"
+                                    class="form-control"
+                                    id="exampleInputuname"
+                                    placeholder="Nombre"
+                                    formControlName="name">
+                                    
+                        </div>
+                        <small *ngIf="invalidName" class="text-danger">
+                            Este campo es requerido. 
+                          </small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Edad</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-calendar"></i></div>
+                            <input type="email" 
+                                    class="form-control" 
+                                    id="exampleInputEmail1" 
+                                    placeholder="Edad"
+                                    formControlName="age">
+                                    
+                        </div>
+                        <small *ngIf="invalidAge" class="text-danger">
+                            Este campo es requerido. 
+                        </small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="exampleInputuname">User Name</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-github"></i></div>
+                            <input type="text"
+                                    class="form-control"
+                                    id="exampleInputuname"
+                                    placeholder="Nombre del usuario"
+                                    formControlName="username">
+                        </div>
+                        <small *ngIf="invalidUsername" class="text-danger">
+                            Este campo es requerido. 
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+                    <button type="submit" 
+                    class="btn btn-success  waves-effect waves-light m-r-10"
+                   >
+                    
+                        <i class="fa fa-save"></i>
+                        Añadir
+                    </button>
+                    <button type="button"  (click)="updateUser()"
+                    class="btn btn-info  waves-effect waves-light m-r-10"
+                   >
+                    
+                        <i class="fa fa-pencil"></i>
+                        Actualizar
+                    </button>
+                    <button type="button" 
+                    class="btn btn-danger  waves-effect waves-light m-r-10"
+                    (click)="deleteUser()">
+                    
+                        <i class="fa fa-trash"></i>
+                        Eliminar
+                    </button>
+                   
+            </form>
+
+            </div>
+         
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="row animated fadeIn fast">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-subtitle">Usuarios registrados en mi aplicación</h6>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover" style="cursor:pointer">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Usuario</th>
+                                <th>Edad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of users" (click)="loadUser(user)">
+                                <td>{{ user.name }}</td>
+                                <td>{{ user.age }}</td>
+                                <td>{{ user.username }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-crud [user]="user"  (loadAll)="updateTale($event)"></app-crud>
